@@ -1,0 +1,75 @@
+site_name: Computational Genomics Study Materials
+site_description: Study materials for computational genomics algorithms and concepts
+site_author: Computational Genomics PhD
+
+# Theme configuration
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+  icon:
+    logo: material/dna
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+  - pymdownx.tilde
+
+# Plugins
+plugins:
+  - search
+  - bibtex:
+      bib_file: "docs/references.bib"
+
+# Extra CSS and JavaScript
+extra_css:
+  - assets/css/custom.css
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# Navigation structure
+nav:
+  - Home: index.md
+  - Sequence Alignment:
+    - Overview: alignments/index.md
+    - Basic Concepts: alignments/basic.md
+    - Edit Distance: alignments/edit_distance.md
+    - Global & Local Alignment: alignments/global_local.md
+    - Affine Gap Penalties: alignments/affine_gap.md
+  - Algorithms:
+    - Overview: algorithms/index.md
+  - Data Structures:
+    - Overview: data_structures/index.md
+  - Case Studies:
+    - Overview: case_studies/index.md
+  - Code Examples:
+    - Overview: code_examples/index.md
