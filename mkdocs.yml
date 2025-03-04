@@ -1,60 +1,98 @@
-site_name: Computational Genomics Study Materials
-site_description: Study materials for computational genomics algorithms and concepts
-site_author: Computational Genomics PhD
+# Basic site configuration
+# ------------------------
+site_name: 'PI-AVG: Computational Genomics Algorithms' # Name of the site
+site_url: https://fulopjoz.github.io/pi-avg # Replace with your actual site URL
+site_dir: site # Directory where the built site files will be placed
+docs_dir: docs # Directory containing your documentation source files
+
+# Repository configuration
+# ------------------------
+repo_url: https://github.com/fulopjoz/pi-avg # URL to your source code repository
+repo_name: 'PI-AVG Computational Genomics Algorithms' # Name of the source code repository
+edit_uri: blob/main/docs # URI to the source file in the repository, used for the "Edit this page" links
 
 # Theme configuration
+# -------------------
 theme:
-  name: material
-  palette:
-    primary: indigo
-    accent: indigo
+  name: material # Name of the theme
   features:
     - navigation.tabs
     - navigation.sections
     - navigation.top
     - search.highlight
-    - content.code.copy
+    - content.action.view # Enables the 'view' action button
+    - content.code.copy # Adds copy button besides code blocks
+  font:
+    code: JetBrains Mono # Change code block font to JetBrains mono
   icon:
     logo: material/dna
+    repo: fontawesome/brands/github # Icon for the repository link
+    view: material/eye # Icon for the 'view' action button
+  palette:
+    # Palette for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
 
-# Extensions
+    # Palette for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-5
+        name: Switch to light mode
+
+# Markdown extensions
+# -------------------
 markdown_extensions:
-  - admonition
-  - attr_list
+  - admonition # Support for admonitions (notes, warnings, etc.)
+  - attr_list # Allows adding attributes to HTML tags
   - def_list
-  - footnotes
+  - footnotes # Enables support for footnotes
   - meta
   - toc:
-      permalink: true
+      permalink: true # Enables permalinks for headings
   - pymdownx.arithmatex:
-      generic: true
+      generic: true # Support for LaTeX math
   - pymdownx.betterem
   - pymdownx.caret
-  - pymdownx.details
-  - pymdownx.emoji
-  - pymdownx.highlight
+  - pymdownx.details # Support for details/summary tags
+  - pymdownx.emoji # Emoji support
+  - pymdownx.highlight # Syntax highlighting for code blocks
   - pymdownx.inlinehilite
   - pymdownx.keys
+  - pymdownx.magiclink # Automatic linking for URLs and email addresses
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.superfences
-  - pymdownx.tabbed
-  - pymdownx.tasklist
+  - pymdownx.superfences # Extra fences for code blocks
+  - pymdownx.tabbed:
+      alternate_style: true # Support for block tabs in html page
+  - pymdownx.tasklist # Support for task lists
   - pymdownx.tilde
 
-# Plugins
-plugins:
-  - search
-  - bibtex:
-      bib_file: "docs/references.bib"
-
-# Extra CSS and JavaScript
+# Extra resources
+# ---------------
 extra_css:
-  - assets/css/custom.css
+  - assets/css/custom.css # Additional CSS styles
 
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/mathjax.js
+
+# Plugins
+# -------
+plugins:
+  - search # Adds a search bar to the site
+  - bibtex:
+      bib_file: "docs/references.bib"
+  - roamlinks # Support for wikilinks similar to Roam Research and Obsidian
+  - markdown-exec # Support for execution of code blocks
 
 # Navigation structure
 nav:

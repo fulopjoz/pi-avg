@@ -42,10 +42,9 @@ This documentation is built with [MkDocs](https://www.mkdocs.org/), a fast and s
    cd pi-avg
    ```
 
-2. Install MkDocs and required packages:
+2. Install MkDocs and all required packages:
    ```
-   pip install mkdocs
-   pip install mkdocs-material
+   pip install -r requirements.txt
    ```
 
 3. Serve the documentation locally:
@@ -54,6 +53,22 @@ This documentation is built with [MkDocs](https://www.mkdocs.org/), a fast and s
    ```
 
 4. Open your browser and navigate to `http://127.0.0.1:8000/`
+
+### GitHub Pages Deployment
+
+To deploy the documentation to GitHub Pages:
+
+1. Build the site:
+   ```
+   mkdocs build
+   ```
+
+2. Deploy to GitHub Pages:
+   ```
+   mkdocs gh-deploy
+   ```
+
+This will build the site and push it to the `gh-pages` branch of your repository, making it available at `https://fulopjoz.github.io/pi-avg/`.
 
 ## Contributing
 

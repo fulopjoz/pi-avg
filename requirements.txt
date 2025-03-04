@@ -1,0 +1,15 @@
+# Core MkDocs and theme
+mkdocs>=1.4.0
+mkdocs-material>=9.0.0
+
+# Existing plugins
+mkdocs-bibtex>=2.0.0
+
+# New plugins
+mkdocs-roamlinks-plugin>=0.1.0
+markdown-exec>=1.0.0
+mkdocs-plantuml>=0.1.1
+python-markdown-math>=0.8
+
+# Additional dependencies
+pymdown-extensions>=9.0
