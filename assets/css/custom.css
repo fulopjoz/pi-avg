@@ -1,0 +1,148 @@
+/* Custom styles for Computational Genomics Study Materials */
+
+/* Theme colors for headings and strong text */
+/* For slate color scheme (dark mode) */
+[data-md-color-scheme=slate] strong {
+    color: #FF82B2; /*pink */
+}
+
+[data-md-color-scheme=slate] h2 {
+    color: #9EBCFF; /* blue */
+}
+
+[data-md-color-scheme=slate] h3 {
+    color: #37D597; /* green */
+}
+
+[data-md-color-scheme=slate] h4 {
+    color: #B33C3C; /* darker red (was yellow) */
+}
+
+[data-md-color-scheme=slate] h5 {
+    color: #FA8D8D; /* red */
+}
+
+[data-md-color-scheme=slate] h6 {
+    color: #FDB0B0; /* pink */
+}
+
+/* For default color scheme (light mode) */
+[data-md-color-scheme=default] strong {
+    color: #A95474; /*pink*/
+}
+
+[data-md-color-scheme=default] h2 {
+    color: #5C6F99; /* blue */
+}
+
+[data-md-color-scheme=default] h3 {
+    color: #1D7E58; /* green */
+}
+
+[data-md-color-scheme=default] h4 {
+    color: #8B2626; /* darker red (was yellow/brown) */
+}
+
+[data-md-color-scheme=default] h5 {
+    color: #A45A5A; /* red */
+}
+
+[data-md-color-scheme=default] h6 {
+    color: #916363; /* pink */
+}
+
+/* Improve code block readability */
+.md-typeset pre {
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+/* Style for sequence alignment examples */
+.sequence-alignment {
+  font-family: monospace;
+  white-space: pre;
+  background-color: #f8f8f8;
+  padding: 1em;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+/* Style for dynamic programming matrices */
+.dp-matrix {
+  font-family: monospace;
+  white-space: pre;
+  background-color: #f0f0f0;
+  padding: 1em;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+/* Style for algorithm pseudocode */
+.algorithm {
+  background-color: #f5f5f5;
+  padding: 1em;
+  border-left: 4px solid #2196f3;
+  margin-bottom: 1em;
+}
+
+/* Style for biological sequence examples */
+.dna-sequence {
+  font-family: monospace;
+  color: #004d40;
+  background-color: #e0f2f1;
+  padding: 0.2em 0.4em;
+  border-radius: 2px;
+}
+
+.protein-sequence {
+  font-family: monospace;
+  color: #4a148c;
+  background-color: #f3e5f5;
+  padding: 0.2em 0.4em;
+  border-radius: 2px;
+}
+
+/* Style for important notes */
+.important-note {
+  background-color: #fff8e1;
+  padding: 1em;
+  border-left: 4px solid #ffc107;
+  margin-bottom: 1em;
+}
+
+/* Style for biological terms */
+.bio-term {
+  color: #0d47a1;
+  font-weight: 500;
+}
+
+/* Style for mathematical formulas */
+.math-formula {
+  background-color: #f5f5f5;
+  padding: 0.5em;
+  margin: 1em 0;
+  overflow-x: auto;
+}
+
+/* Improve table readability */
+.md-typeset table:not([class]) {
+  font-size: 0.9em;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: #e0e0e0;
+  color: #212121;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+/* Style for references */
+.reference {
+  font-size: 0.9em;
+  color: #616161;
+  border-left: 2px solid #9e9e9e;
+  padding-left: 1em;
+  margin: 1em 0;
+}
