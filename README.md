@@ -1,6 +1,17 @@
-# PI-AVG: Algorithms and Data Structures
+# PI-AVG: Computational Genomics Algorithms (Algoritmy výpočetní genomiky)
 
-This repository contains study materials for algorithms and data structures, with a focus on sequence alignments and related topics.
+This repository contains study materials for the PI-AVG course at Czech Technical University in Prague, focusing on computational genomics algorithms.
+
+## Course Schedule
+
+Lectures: Tuesday 9:15 at room TH:A-1247
+
+- March 4, 2025: Multiple Sequence Alignment I
+- March 18, 2025: Multiple Sequence Alignment II
+- April 1, 2025: Read Alignment
+- April 15, 2025: Genome Assembly
+- April 29, 2025: Q&A
+- May 13, 2025: Q&A
 
 ## Contents
 

@@ -1,6 +1,17 @@
-# Computational Genomics Study Materials
+# PI-AVG: Computational Genomics Algorithms
 
-Welcome to the Computational Genomics study materials. This site contains notes, algorithms, and examples from computational genomics PhD lectures, organized by topic.
+Welcome to the PI-AVG (Algoritmy výpočetní genomiky) course materials. This site contains notes, algorithms, and examples for the Computational Genomics Algorithms course at Czech Technical University in Prague.
+
+## Course Schedule
+
+Lectures: Tuesday 9:15 at room TH:A-1247
+
+- March 4, 2025: Multiple Sequence Alignment I
+- March 18, 2025: Multiple Sequence Alignment II
+- April 1, 2025: Read Alignment
+- April 15, 2025: Genome Assembly
+- April 29, 2025: Q&A
+- May 13, 2025: Q&A
 
 ## Topics Covered
 
