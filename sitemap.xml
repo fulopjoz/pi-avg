@@ -2,42 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://fulopjoz.github.io/pi-avg/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-19</lastmod>
     </url>
     <url>
          <loc>https://fulopjoz.github.io/pi-avg/algorithms/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-19</lastmod>
     </url>
     <url>
          <loc>https://fulopjoz.github.io/pi-avg/alignments/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-19</lastmod>
     </url>
     <url>
          <loc>https://fulopjoz.github.io/pi-avg/alignments/affine_gap/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-19</lastmod>
     </url>
     <url>
          <loc>https://fulopjoz.github.io/pi-avg/alignments/basic/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-19</lastmod>
     </url>
     <url>
          <loc>https://fulopjoz.github.io/pi-avg/alignments/edit_distance/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-19</lastmod>
     </url>
     <url>
          <loc>https://fulopjoz.github.io/pi-avg/alignments/global_local/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-19</lastmod>
+    </url>
+    <url>
+         <loc>https://fulopjoz.github.io/pi-avg/alignments/multiple_sequence/</loc>
+         <lastmod>2025-03-19</lastmod>
     </url>
     <url>
          <loc>https://fulopjoz.github.io/pi-avg/case_studies/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-19</lastmod>
     </url>
     <url>
          <loc>https://fulopjoz.github.io/pi-avg/code_examples/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-19</lastmod>
     </url>
     <url>
          <loc>https://fulopjoz.github.io/pi-avg/data_structures/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-19</lastmod>
     </url>
 </urlset>
