@@ -103,6 +103,7 @@ nav:
     - Edit Distance: alignments/edit_distance.md
     - Global & Local Alignment: alignments/global_local.md
     - Affine Gap Penalties: alignments/affine_gap.md
+    - Multiple Sequence Alignment: alignments/multiple_sequence.md
   - Algorithms:
     - Overview: algorithms/index.md
   - Data Structures:

@@ -20,6 +20,7 @@ This section covers the following topics related to sequence alignment:
 - [Edit Distance](edit_distance.md): Algorithms for measuring sequence differences
 - [Global & Local Alignment](global_local.md): Different approaches to sequence alignment
 - [Affine Gap Penalties](affine_gap.md): Advanced models for handling insertions and deletions
+- [Multiple Sequence Alignment](multiple_sequence.md): Techniques for aligning three or more sequences
 
 ## Algorithms Covered
 
@@ -30,6 +31,8 @@ We explore several key algorithms including:
 - Dynamic programming approaches for edit distance
 - Longest Common Subsequence (LCS)
 - Approximate string matching
+- Progressive alignment for multiple sequences
+- Codon-based alignment for DNA-protein comparison
 
 ## Practical Applications
 
