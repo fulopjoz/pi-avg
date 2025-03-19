@@ -754,6 +754,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pairwise-alignment-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pairwise Alignment Complexity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#advanced-techniques" class="md-nav__link">
     <span class="md-ellipsis">
       Advanced Techniques
@@ -780,6 +789,33 @@
   <a href="#practical-applications" class="md-nav__link">
     <span class="md-ellipsis">
       Practical Applications
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-questions-and-answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Questions and Answers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Reading
     </span>
   </a>
   
@@ -1262,6 +1298,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pairwise-alignment-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pairwise Alignment Complexity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#advanced-techniques" class="md-nav__link">
     <span class="md-ellipsis">
       Advanced Techniques
@@ -1288,6 +1333,33 @@
   <a href="#practical-applications" class="md-nav__link">
     <span class="md-ellipsis">
       Practical Applications
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-questions-and-answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Questions and Answers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Reading
     </span>
   </a>
   
@@ -1380,6 +1452,22 @@
 <li><strong>Possible reading frames</strong>: DNA can be read in frames 0, 1, or 2 (or all six frames if reverse complement is considered)</li>
 <li><strong>Implementation</strong>: This often requires a "3-to-1" stepping in the dynamic programming algorithm</li>
 </ul>
+<p>In a codon-based alignment approach:
+- For the DNA index: increment in steps of 3 (because one codon = three nucleotides)
+- For the protein index: increment in steps of 1 (each index is one amino acid)</p>
+<p>A conceptual Needleman-Wunsch style recurrence adapted for codon-based alignment might look like:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\text{score}[i,j] = \max\Bigl\{&amp;\;\text{score}[\,i-1,\,j-3\,] + \text{subst}\bigl(\text{DNA}[j-2,j-1,j],\,\text{Protein}[i]\bigr),\\
+&amp;\;\text{score}[\,i,\,j-1\,] - \delta_{\text{gap}},\\
+&amp;\;\text{score}[\,i-1,\,j\,] - \delta_{\text{gap}} \Bigr\}.
+\end{aligned}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(i\)</span> indexes the protein from 1..<span class="arithmatex">\(m\)</span> (where <span class="arithmatex">\(m\)</span> is amino acid length)
+- <span class="arithmatex">\(j\)</span> indexes the DNA from 1..<span class="arithmatex">\(3n\)</span> (where <span class="arithmatex">\(n\)</span> is the number of codons)
+- The first line represents the codon→amino-acid match or mismatch
+- The other lines allow insertion/deletion (effectively handling frameshifts or partial alignments)</p>
 <h3 id="handling-introns-and-large-gaps">Handling Introns and Large Gaps<a class="headerlink" href="#handling-introns-and-large-gaps" title="Permanent link">&para;</a></h3>
 <p>In eukaryotic genes, large introns disrupt the coding exons, presenting challenges for alignment:</p>
 <ul>
@@ -1387,17 +1475,27 @@
 <li><strong>Spliced alignment</strong>: When aligning cDNA to genomic DNA, introns appear as large gaps in the genomic sequence</li>
 <li><strong>Specialized approaches</strong>: Tools often use specialized spliced alignment approaches for gene alignment</li>
 </ul>
+<p>Introns can be thousands—or in some cases, millions—of bases long, creating significant challenges:
+- Pure dynamic programming with large gap penalties can become computationally expensive
+- Bounds on intron length may be needed (average intron size is around ~1,500 bases, but maximum introns can exceed 1 million bases)
+- Spliced alignment tools try to find exons that match the protein's coding sequence and allow skipping entire introns</p>
 <h2 id="complexity-and-speed-ups">Complexity and Speed-Ups<a class="headerlink" href="#complexity-and-speed-ups" title="Permanent link">&para;</a></h2>
 <h3 id="multiple-alignment-complexity">Multiple Alignment Complexity<a class="headerlink" href="#multiple-alignment-complexity" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Exact dynamic programming for <span class="arithmatex">\(D\)</span> sequences of average length <span class="arithmatex">\(N\)</span>: <span class="arithmatex">\(O(N^D)\)</span> time</li>
 <li>This exponential complexity makes exact solutions impractical for more than a few sequences</li>
 </ul>
+<h3 id="pairwise-alignment-complexity">Pairwise Alignment Complexity<a class="headerlink" href="#pairwise-alignment-complexity" title="Permanent link">&para;</a></h3>
+<ul>
+<li><span class="arithmatex">\(O(nm)\)</span> time, <span class="arithmatex">\(O(\min\{n,m\})\)</span> space for global/local alignment</li>
+<li>For DNA-protein alignment with long genomic DNA (millions of nucleotides) vs. a protein of length ~300, the computation can be extensive</li>
+</ul>
 <h3 id="advanced-techniques">Advanced Techniques<a class="headerlink" href="#advanced-techniques" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Affine Gap Costs</strong>: Extend the dynamic programming with extra "tracks" for gap opening vs. gap extension</li>
-<li><strong>Bit-Parallel Methods</strong>: For approximate string matching with small alphabets</li>
+<li><strong>Bit-Parallel Methods</strong>: For approximate string matching with small alphabets (like Myers Bit-Parallel algorithm)</li>
 <li><strong>Heuristic Pruning</strong>: Limiting the search space based on biological constraints</li>
+<li><strong>Index structures</strong>: Using suffix arrays or BWT-based structures for short local alignments, then chaining them together</li>
 </ul>
 <h2 id="worked-example-protein-dna-with-introns">Worked Example: Protein-DNA with Introns<a class="headerlink" href="#worked-example-protein-dna-with-introns" title="Permanent link">&para;</a></h2>
 <p>When aligning a protein sequence to genomic DNA containing introns:</p>
@@ -1406,10 +1504,12 @@
 <li><strong>Protein</strong> sequence: length <span class="arithmatex">\(\sim\! \frac{|DNA|}{3}\)</span> but no introns</li>
 </ol>
 <p><strong>Strategy</strong>:
-- Identify or guess which reading frame(s) might be correct
-- Possibly skip known introns or treat them as large gaps
-- Use a codon-to-amino-acid mapping in the dynamic programming's substitution step
-- If intron positions are unknown, incorporate a "splicing" model that allows skipping large segments in the DNA</p>
+1. Identify or guess which reading frame(s) might be correct (try all frames 0, 1, 2, and possibly reverse complement)
+2. Group DNA in blocks of 3 nucleotides (codons)
+3. In the dynamic programming matrix, make the DNA index jump by 3 for each single step in the protein
+4. Use a codon-to-amino-acid mapping in the dynamic programming's substitution step
+5. Allow large gaps to account for introns, possibly using specialized "jumping alignment" techniques
+6. If intron positions are unknown, incorporate a "splicing" model that allows skipping large segments in the DNA</p>
 <h2 id="practical-applications">Practical Applications<a class="headerlink" href="#practical-applications" title="Permanent link">&para;</a></h2>
 <p>Multiple sequence alignment is essential for:</p>
 <ul>
@@ -1418,6 +1518,65 @@
 <li><strong>Functional annotation</strong>: Discovering functional domains and motifs</li>
 <li><strong>Primer design</strong>: Creating primers that target conserved regions</li>
 <li><strong>Metagenomics</strong>: Analyzing complex microbial communities</li>
+</ul>
+<h2 id="common-questions-and-answers">Common Questions and Answers<a class="headerlink" href="#common-questions-and-answers" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>Q</strong>: Why is multiple sequence alignment (with sum-of-pairs scoring) NP-hard?<br />
+<strong>A</strong>: Because the search space of all gap placements across <span class="arithmatex">\(D\)</span> sequences grows exponentially, and it has been formally proven that an optimal MSA (maximizing or minimizing certain standard scoring functions) is NP-hard.</p>
+</li>
+<li>
+<p><strong>Q</strong>: How do codons affect DNA–protein alignment?<br />
+<strong>A</strong>: DNA is read in triplets, so aligning each codon to one amino acid can improve accuracy. Gaps in the DNA must be multiples of 3 if they are truly coding segments, but introns complicate matters by allowing large "non-triplet" chunks to be skipped.</p>
+</li>
+<li>
+<p><strong>Q</strong>: What if the sequences differ greatly in length?<br />
+<strong>A</strong>: Large insertions/deletions or introns require special gap penalty regimes or specialized gene/spliced alignment methods. Standard linear gap scoring may overly penalize or distort the alignment.</p>
+</li>
+<li>
+<p><strong>Q</strong>: How do we align 10 or more sequences in practice if it's NP-hard?<br />
+<strong>A</strong>: Use heuristics such as progressive alignment guided by a phylogenetic or distance-based tree. Then refine the resulting alignment iteratively if needed.</p>
+</li>
+</ol>
+<h2 id="practice-questions">Practice Questions<a class="headerlink" href="#practice-questions" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Pairwise vs. Multiple</strong>  </li>
+<li>
+<p>Define pairwise alignment and MSA. Why does dynamic programming suffice for the former but not scale to the latter?</p>
+</li>
+<li>
+<p><strong>Gap Scoring</strong>  </p>
+</li>
+<li>
+<p>Compare the difference between fixed gap penalties (<span class="arithmatex">\(\delta\)</span>) vs. affine gap costs (<span class="arithmatex">\(g + r \cdot L\)</span>), with <span class="arithmatex">\(g\)</span> = gap opening penalty, <span class="arithmatex">\(r\)</span> = extension penalty, <span class="arithmatex">\(L\)</span> = gap length. How do the DP recurrences change?</p>
+</li>
+<li>
+<p><strong>Codon-Based Alignments</strong>  </p>
+</li>
+<li>
+<p>Outline how you would adapt the Needleman–Wunsch (global alignment) recurrence if each step in DNA moves 3 nucleotides to match 1 amino acid. Where do you incorporate the codon → amino acid lookup?</p>
+</li>
+<li>
+<p><strong>Introns and Large Gaps</strong>  </p>
+</li>
+<li>
+<p>Suppose you want to align a cDNA of length 2,000 to a genomic DNA of length 50,000 (with introns). How might you modify or optimize standard DP to handle potentially huge gaps?</p>
+</li>
+<li>
+<p><strong>Progressive Alignment</strong>  </p>
+</li>
+<li>Summarize the progressive alignment method. What is a "guide tree," and how do "profiles" help incorporate more than two sequences?</li>
+</ol>
+<h2 id="additional-reading">Additional Reading<a class="headerlink" href="#additional-reading" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Mäkinen et al. (2015)</strong>: Chapter 6, "Alignments," especially:</li>
+<li>§6.4 (Biological sequence alignment: global, local, overlap)</li>
+<li>§6.5 (Gene alignment and splicing)</li>
+<li>§6.6 (Multiple alignment, hardness, progressive MSA)</li>
+<li><strong>PI-AVG-01-Multiple_Sequence_Alignment.pdf</strong>:</li>
+<li>Slides on pairwise alignment definitions, edit distance, dynamic programming</li>
+<li>Sections on local, semiglobal, overlap alignments</li>
+<li>Material on heuristic algorithms for MSA (progressive/branch-and-bound)</li>
 </ul>
 
 
