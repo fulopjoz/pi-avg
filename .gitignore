@@ -39,3 +39,6 @@ Thumbs.db
 
 # slides
 slides/
+
+# Local instructions
+mkdocks-instruct.md
